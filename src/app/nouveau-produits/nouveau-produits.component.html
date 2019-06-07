@@ -1,0 +1,40 @@
+<div class="container">
+<div class="col-md-9 col-sm-10 col-xs-12">
+<div class="panel panel-default">
+  <div class="panel-heading">Saisie d'un nouveau produit</div>
+  <div class="panel-body" *ngIf="mode==1">
+      <form #F=ngForm (ngSubmit)="onSaveProduct(F.value)">
+        <div class="form-group">
+          <label class="control-label">Designation</label>
+          <input class="form-control" type="text" name="designation" ngModel>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Prix</label>
+          <input class="form-control" type="number" name="price" ngModel>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Quantite</label>
+          <input class="form-control" type="number" name="quantite" ngModel>
+        </div>
+        <button class="btn btn-success" type="submit">Save</button>
+      </form>
+    </div>
+  <div class="panel-body" *ngIf="mode==2">
+      <button (click)="onNewProduct()" class="btn btn-success">Nouveau Produit</button>
+    <br><br>
+    <div class="form-group">
+      <label><strong>ID: </strong></label><label>{{currentProduct.code}}</label>
+    </div>
+    <div class="form-group">
+    <label><strong>Designation: </strong></label><label>{{currentProduct.designation}}</label>
+    </div>
+    <div class="form-group">
+      <label><strong>Prix: </strong></label><label>{{currentProduct.price}}</label>
+    </div>
+    <div class="form-group">
+        <label><strong>Quantite: </strong></label><label>{{currentProduct.quantite}}</label>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
